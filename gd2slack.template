@@ -1,6 +1,6 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "Demonstrates how to connect GuardDuty to your Slack channel. The template Installs a Lambda function that writes CW Events to a Slack incoming web hook. This relies on you creating an *incoming web hook* in your slack account and simply passing the URL as a parameter to this template",
+    "Description": "Invokes Slack Webhook when GuardDuty events are generated.",
     "Metadata": {
         "AWS::CloudFormation::Interface": {
             "ParameterGroups": [
@@ -176,7 +176,7 @@
     "        }\n",
     "        severity = 'Low';\n",
     "    } else if (message.detail.severity < 7.0) {\n",
-    "        if (minSeverityLevel !== 'MED' || minSeverityLevel !== 'MEDIUM') {\n",
+    "        if (minSeverityLevel === 'HIGH') {\n",
     "            callback(null);\n",
     "            return;\n",
     "        }\n",
