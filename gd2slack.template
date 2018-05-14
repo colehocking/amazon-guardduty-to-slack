@@ -1,6 +1,6 @@
 {
     "AWSTemplateFormatVersion": "2010-09-09",
-    "Description": "Invokes Slack Webhook when GuardDuty events are generated.",
+    "Description": "Invokes Slack webhook API when GuardDuty events are triggered.",
     "Metadata": {
         "AWS::CloudFormation::Interface": {
             "ParameterGroups": [
